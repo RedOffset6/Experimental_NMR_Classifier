@@ -1,0 +1,73 @@
+common_name,smile_string,shifts,alkene
+2-ethylacrylic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 117.18, 117.17, 117.13, 117.12, 79.69, 25.80, 25.79, 12.27, 12.24
+
+1H NMR (600 MHz, H2O+D2O_met) ? 5.49, 5.47, 5.17, 5.14, 4.70, 2.17, 2.14, 0.95, 0.88.",1
+acrylamide,,"13C NMR (151 MHz, H2O+D2O_met) ? 132.86, 54.25, 18.99, 13.34, 13.23, 12.56, -2.79
+
+1H NMR (600 MHz, H2O+D2O_met) ? 6.31, 2.77, 1.61, 1.61, 1.58, 1.54, -0.13.",1
+citraconic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 120.39, 120.39, 20.43, 20.42
+
+1H NMR (600 MHz, H2O+D2O_met) ? 5.43, 5.41, 1.84, 1.82.",1
+fumaric acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 135.36, 135.35
+
+1H NMR (600 MHz, H2O+D2O_met) ? 6.44, 6.42.",1
+glutaconic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 121.26, 25.43, 19.17
+
+1H NMR (600 MHz, H2O+D2O_met) ? 5.53, 1.79, 1.66.",1
+itaconic acid,,"13C NMR (151 MHz, MeOD) ? 127.38, 127.38, 47.78, 36.93
+
+1H NMR (600 MHz, MeOD) ? 6.30, 5.76, 3.34, 3.32.",1
+maleic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 130.78
+
+1H NMR (600 MHz, H2O+D2O_met) ? 5.94.",1
+mesaconic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 129.48, 14.86
+
+1H NMR (600 MHz, H2O+D2O_met) ? 6.38, 1.81.",1
+N-Acryloylglycine,,"13C NMR (151 MHz, MeOD) ? 131.87, 127.44, 127.43, 59.44, 42.03, 39.29
+
+1H NMR (600 MHz, MeOD) ? 6.29, 6.26, 5.69, 3.95, 3.81, 2.48.",1
+senecioic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 121.26, 25.43, 19.17
+
+1H NMR (600 MHz, H2O+D2O_met) ? 5.53, 1.79, 1.66.",1
+tiglic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 132.86, 13.30, 12.56
+
+1H NMR (600 MHz, H2O+D2O_met) ? 6.31, 1.58, 1.58.",1
+uracil,,"13C NMR (151 MHz, H2O+D2O_met) ? 101.03
+
+1H NMR (600 MHz, H2O+D2O_met) ? 5.70.",1
+1-Butanol,,"13C NMR (151 MHz, H2O+D2O_met) ? 61.51, 33.39, 18.34, 13.01
+
+1H NMR (600 MHz, H2O+D2O_met) ? 3.50, 1.42, 1.24, 0.89.",0
+2-hydroxybutyric acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 73.50, 27.05, 8.60
+
+1H NMR (600 MHz, H2O+D2O_met) ? 3.90, 1.53, 0.82.",0
+2-ketohexanoic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 39.00, 24.89, 21.74, 12.99
+
+1H NMR (600 MHz, H2O+D2O_met) ? 2.62, 1.45, 1.23, 0.80.",0
+5-Aminolevulinic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 47.30, 35.85, 30.70
+
+1H NMR (600 MHz, H2O+D2O_met) ? 4.01, 2.68, 2.40.",0
+alpha-Ketoisovaleric acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 36.84, 16.26
+
+1H NMR (600 MHz, H2O+D2O_met) ? 2.88, 0.96.",0
+Glyoxylic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 88.21
+
+1H NMR (600 MHz, H2O+D2O_met) ? 4.97.",0
+isovaleric acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 47.13, 26.05, 21.90
+
+1H NMR (600 MHz, H2O+D2O_met) ? 1.98, 1.88, 0.80.",0
+methyl succinic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 42.32, 40.00, 17.09
+
+1H NMR (600 MHz, H2O+D2O_met) ? 2.55, 2.00, 0.96.",0
+octanol,,"13C NMR (151 MHz, MeOD) ? 61.58, 32.69, 29.04, 25.56, 22.40, 12.94
+
+1H NMR (600 MHz, MeOD) ? 3.54, 1.37, 1.36, 1.36, 1.34, 0.95.",0
+propionylglycine,,"13C NMR (151 MHz, H2O+D2O_met) ? 43.32, 28.88, 9.29
+
+1H NMR (600 MHz, H2O+D2O_met) ? 3.61, 2.17, 0.98.",0
+pyroglutamic acid,,"13C NMR (151 MHz, H2O+D2O_met) ? 58.42, 29.71, 25.22
+
+1H NMR (600 MHz, H2O+D2O_met) ? 4.04, 2.26, 1.88.",0
+isopropyl alcohol,,"13C NMR (151 MHz, H2O+D2O_met) ? 64.23, 23.73
+
+1H NMR (600 MHz, H2O+D2O_met) ? 3.90, 1.06.",0
