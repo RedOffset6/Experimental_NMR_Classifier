@@ -34,6 +34,24 @@ def get_data_loader(fraction, previous_loader, batch_size=batch_size):
     loader = DataLoader(dataset, batch_size=batch_size, sampler=subset_sampler, shuffle=False)
     return loader
 
+#getting the list of excluded indeces
+with open('../../data/metadata/excluded_qm9_indeces.pkl', 'rb') as file:
+    excluded_indeces = pickle.load(file)
+
+#uses the excluded indeces to create a list if filenames which have been excluded
+excluded_filenames = []
+for index in excluded_indeces:
+    filename = f"{index}.png"
+    excluded_filenames.append(filename)
+
+print(f"Printing the excluded filenames: {excluded_filenames}")
+
+
+
+
+
+
+
 for trait in trait_list:
 
 
@@ -141,3 +159,34 @@ for trait in trait_list:
     #     pickle.dump(test_loader, f)
 
     print("Hello")
+
+
+
+#######################################################################################
+#                                                                                     #
+#    THIS WILL HOPEFULLY ALLOW ME TO EXCLUDE THE FILENAME LIST FROM THE DATALOADER    #
+#                                                                                     #
+#######################################################################################
+
+
+
+# # List of filenames to exclude
+# exclude_filenames = ["file1.jpg", "file2.jpg"]
+
+# # Custom dataset class inheriting from ImageFolder
+# class CustomImageFolder(datasets.ImageFolder):
+#     def __init__(self, root, transform=None, exclude_filenames=None):
+#         super().__init__(root, transform=transform)
+#         # Get full paths of excluded files
+#         self.exclude_paths = set(os.path.join(root, cls, fname)
+#                                  for cls, _, fnames in self.class_to_idx.items()
+#                                  for fname in exclude_filenames)
+#         # Filter out excluded files from the samples list
+#         self.samples = [(path, label) for path, label in self.samples if path not in self.exclude_paths]
+
+# # Initialize the dataset with the custom class
+# dataset_path = 'your_dataset_path'
+# dataset = CustomImageFolder(root=dataset_path, transform=data_transforms, exclude_filenames=exclude_filenames)
+
+# # Create the DataLoader
+# dataloader = DataLoader(dataset, batch_size=32, shuffle=True)

@@ -70,35 +70,3 @@ def main():
     with open('../../data/metadata/excluded_qm9_indeces.pkl', 'wb') as f:
         pkl.dump(matching_qm9_indeces, f) 
 main()
-
-
-
-
-#######################################################################################
-#                                                                                     #
-#    THIS WILL HOPEFULLY ALLOW ME TO EXCLUDE THE FILENAME LIST FROM THE DATALOADER    #
-#                                                                                     #
-#######################################################################################
-
-
-
-# # List of filenames to exclude
-# exclude_filenames = ["file1.jpg", "file2.jpg"]
-
-# # Custom dataset class inheriting from ImageFolder
-# class CustomImageFolder(datasets.ImageFolder):
-#     def __init__(self, root, transform=None, exclude_filenames=None):
-#         super().__init__(root, transform=transform)
-#         # Get full paths of excluded files
-#         self.exclude_paths = set(os.path.join(root, cls, fname)
-#                                  for cls, _, fnames in self.class_to_idx.items()
-#                                  for fname in exclude_filenames)
-#         # Filter out excluded files from the samples list
-#         self.samples = [(path, label) for path, label in self.samples if path not in self.exclude_paths]
-
-# # Initialize the dataset with the custom class
-# dataset_path = 'your_dataset_path'
-# dataset = CustomImageFolder(root=dataset_path, transform=data_transforms, exclude_filenames=exclude_filenames)
-
-# # Create the DataLoader
-# dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
