@@ -1,6 +1,6 @@
 import pandas as pd
 import pickle as pkl
-from rdkit import Chemg
+from rdkit import Chem
 
 #
 # A function which gets the smile strings of all of the molecules in the test dataset
@@ -66,6 +66,9 @@ def main():
 
     print(f"The indeces which overlap are {matching_qm9_indeces}")
 
+    #saves the list as a pkl file
+    with open('../../data/metadata/excluded_qm9_indeces.pkl', 'wb') as f:
+        pkl.dump(matching_qm9_indeces, f) 
 main()
 
 

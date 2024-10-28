@@ -108,11 +108,11 @@ for trait in trait_list:
         print (f"The length of the data loader is : {len(loader)}")
 
 
-    ###############################
-    #
-    #  ASK CALVIN WHY THIS DOESNT WORK ?!?!?!
-    #
-    ###############################
+    #############################################
+    #                                           #
+    #  ASK CALVIN WHY THIS DOESNT WORK ?!?!?!   #
+    #                                           #
+    #############################################
         
 
     # # Get the test loader
@@ -128,16 +128,16 @@ for trait in trait_list:
     #                          SAVING THE DATA LOADERS                         #
     #                                                                          #
     ############################################################################
-    if not os.path.exists(f"data_loaders/{image_type}/train_loaders"):
-        os.makedirs(f"data_loaders/{image_type}/train_loaders")
-    if not os.path.exists(f"data_loaders/{image_type}/test_loaders"):
-        os.makedirs(f"data_loaders/{image_type}/test_loaders")
+    if not os.path.exists(f"../../train_loaders/{image_type}/train_loaders"):
+        os.makedirs(f"../../train_loaders/{image_type}/train_loaders")
+    if not os.path.exists(f"../../train_loaders/{image_type}/test_loaders"):
+        os.makedirs(f"../../train_loaders/{image_type}/test_loaders")
     # Save data loaders to a pickle file
-    with open(f'data_loaders/{image_type}/train_loaders/{trait}_train_loader.pkl', 'wb') as f:
+    with open(f'../../train_loaders/{image_type}/train_loaders/{trait}_train_loader.pkl', 'wb') as f:
         pickle.dump(data_loaders, f)
 
-    # Save test loader to a pickle file
-    with open(f'data_loaders/{image_type}/test_loaders/{trait}_test_loader.pkl', 'wb') as f:
-        pickle.dump(test_loader, f)
+    # # Save test loader to a pickle file
+    # with open(f'../../train_loaders/{image_type}/test_loaders/{trait}_test_loader.pkl', 'wb') as f:
+    #     pickle.dump(test_loader, f)
 
     print("Hello")
