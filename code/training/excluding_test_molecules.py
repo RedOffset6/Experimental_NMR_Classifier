@@ -69,4 +69,5 @@ def main():
     #saves the list as a pkl file
     with open('../../data/metadata/excluded_qm9_indeces.pkl', 'wb') as f:
         pkl.dump(matching_qm9_indeces, f) 
+
 main()

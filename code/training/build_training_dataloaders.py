@@ -9,7 +9,9 @@ import torch
 # trait = sys.argv[1]
 image_type = sys.argv[1]
 
-trait_list = ["alcohol", "aldehyde", "epoxide", "ether", "imine", "alkene", "ketone", "amide"]
+#trait_list = ["alcohol", "aldehyde", "epoxide", "ether", "imine", "alkene", "ketone", "amide"]
+trait_list = ["alkene"]
+
 
 ############################################################################
 #                                                                          #
@@ -34,6 +36,24 @@ def get_data_loader(fraction, previous_loader, batch_size=batch_size):
     loader = DataLoader(dataset, batch_size=batch_size, sampler=subset_sampler, shuffle=False)
     return loader
 
+############################################################################
+#                                                                          #
+#               CREATES A CUSTOM IMAGE FOLDER CLASS WHICH EXCLUDES         #
+#                             CERTAIN FILE NAMES                           #
+#                                                                          #
+############################################################################
+
+#Custom dataset class inheriting from ImageFolder
+class CustomImageFolder(datasets.ImageFolder):
+    def __init__(self, root, transform=None, exclude_filenames=None):
+        super().__init__(root, transform=transform)
+        # Get full paths of excluded files
+        self.exclude_paths = set(os.path.join(root, cls, fname)
+                                 for cls, fnames in self.class_to_idx.items()
+                                 for fname in exclude_filenames)
+        # Filter out excluded files from the samples list
+        self.samples = [(path, label) for path, label in self.samples if path not in self.exclude_paths]
+
 #getting the list of excluded indeces
 with open('../../data/metadata/excluded_qm9_indeces.pkl', 'rb') as file:
     excluded_indeces = pickle.load(file)
@@ -44,18 +64,12 @@ for index in excluded_indeces:
     filename = f"{index}.png"
     excluded_filenames.append(filename)
 
-print(f"Printing the excluded filenames: {excluded_filenames}")
 
-
-
-
-
-
-
+#loops through the traits
 for trait in trait_list:
 
 
-    dataset_path = f"sorted_image_sets/{image_type}/{trait}_training_data"
+    dataset_path = f"../../../../msci/project/image_classifier/machine_learning/sorted_image_sets/{image_type}/{trait}_training_data"
 
     data_transforms = transforms.Compose([
         transforms.ToTensor(),
@@ -70,9 +84,8 @@ for trait in trait_list:
     np.random.seed(seed)
     torch.manual_seed(seed)
 
-    # Load the dataset
-    dataset = datasets.ImageFolder(root=dataset_path, transform=data_transforms)
-
+    # Load the dataset.0
+    dataset = CustomImageFolder(root=dataset_path, transform=data_transforms, exclude_filenames=excluded_filenames)
     # Total indices of the dataset
     total_indices = set(range(len(dataset)))
 
@@ -146,12 +159,12 @@ for trait in trait_list:
     #                          SAVING THE DATA LOADERS                         #
     #                                                                          #
     ############################################################################
-    if not os.path.exists(f"../../train_loaders/{image_type}/train_loaders"):
-        os.makedirs(f"../../train_loaders/{image_type}/train_loaders")
-    if not os.path.exists(f"../../train_loaders/{image_type}/test_loaders"):
-        os.makedirs(f"../../train_loaders/{image_type}/test_loaders")
+    if not os.path.exists(f"../../data/train_loaders/{image_type}/train_loaders"):
+        os.makedirs(f"../../data/train_loaders/{image_type}/train_loaders")
+    if not os.path.exists(f"../../data/train_loaders/{image_type}/test_loaders"):
+        os.makedirs(f"../../data/train_loaders/{image_type}/test_loaders")
     # Save data loaders to a pickle file
-    with open(f'../../train_loaders/{image_type}/train_loaders/{trait}_train_loader.pkl', 'wb') as f:
+    with open(f'../../data/train_loaders/{image_type}/train_loaders/{trait}_train_loader.pkl', 'wb') as f:
         pickle.dump(data_loaders, f)
 
     # # Save test loader to a pickle file
@@ -173,7 +186,7 @@ for trait in trait_list:
 # # List of filenames to exclude
 # exclude_filenames = ["file1.jpg", "file2.jpg"]
 
-# # Custom dataset class inheriting from ImageFolder
+# Custom dataset class inheriting from ImageFolder
 # class CustomImageFolder(datasets.ImageFolder):
 #     def __init__(self, root, transform=None, exclude_filenames=None):
 #         super().__init__(root, transform=transform)
