@@ -139,7 +139,7 @@ accuracy_df = pd.DataFrame()
 #     for functional_group in functional_groups:
 #         models = os.listdir(f"models/high_epoch/{experiment_type}/{functional_group}")
 #         for model in models:
-PATH = f"../../data/models/[1.0]alkene14610cnn.pth"
+PATH = f"../../data/models/[ALL]alkene14610cnn.pth"
 
 with open(f'../../data/test_loaders/qm9/alkene_hsqc.pkl', 'rb') as f:
     test_loader = pkl.load(f)
