@@ -8,9 +8,9 @@ import torch
 
 # trait = sys.argv[1]
 image_type = sys.argv[1]
-
+trait_list = [sys.argv[2]]
 #trait_list = ["alcohol", "aldehyde", "epoxide", "ether", "imine", "alkene", "ketone", "amide"]
-trait_list = ["alkene"]
+# trait_list = ["alkene"]
 
 
 ############################################################################
